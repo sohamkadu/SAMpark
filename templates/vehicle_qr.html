@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vehicle QR - SAMpark</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="qr-page">
+
+        <h1>SAMpark QR Code</h1>
+
+        <h2>{{ vehicle.vehicle_name }}</h2>
+
+        <p class="registration">
+            Registration: {{ vehicle.registration_number }}
+        </p>
+
+        <div class="qr-layout">
+
+            <div class="qr-box">
+                <h3>Scan this QR</h3>
+                <div id="qrcode"></div>
+            </div>
+
+            <div class="guide-box">
+                <h3>How to use this QR code</h3>
+
+                <ol>
+                    <li>Open the camera on your phone.</li>
+                    <li>Point your camera at the QR code.</li>
+                    <li>Tap the link that appears on your screen.</li>
+                    <li>Enter your phone number.</li>
+                    <li>Tap the Call Owner button.</li>
+                    <li>You will receive a call from an unknown number.</li>
+                    <li>Answer the call. You will hear a message that your call is being connected to the vehicle owner.</li>
+                    <li>Stay on the call. You will be connected to the vehicle owner shortly.</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <p class="qr-url-title">QR URL:</p>
+        <p class="qr-url">{{ contact_url }}</p>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <script>
+
+        new QRCode(document.getElementById("qrcode"), {
+            text: "{{ contact_url }}",
+            width: 250,
+            height: 250
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Create Sampark Account</h1>
+
+    <form action="/register" method="post">
+
+        <div>
+            <label>Email</label>
+            <br>
+            <input type="email" name="email"  required>
+        </div>
+
+        <input type="tel" name="phone" placeholder="9876543210" maxlength="10" required>
+        
+        <div>
+            <label>Password</label>
+            <br>
+            <input type="password" name="password"  required>
+        </div>
+
+        
+
+        <br>
+
+        <button type="submit">
+            create account
+        </button>
+
+
+    </form>
+</body>
+</html>

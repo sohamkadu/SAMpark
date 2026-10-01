@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Vehicle Owner - SAMpark</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <form action="/call/{{ vehicle.qr_token }}" method="POST">
+
+    <label>Your phone number</label>
+
+    <br>
+
+    <input
+        type="tel"
+        name="caller_phone"
+        placeholder="9876543210"
+        required
+    >
+
+    <br><br>
+
+    <button type="submit">
+        📞 Call Owner
+    </button>
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - SAMpark</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <p>Email: {{ user.email }}</p>
+
+    <hr>
+
+    <h3>My Vehicles</h3>
+
+
+    {% if vehicles %}
+
+        {% for vehicle in vehicles %}
+
+            <div>
+
+                <h4> {{ vehicle.vehicle_name }}</h4>
+
+                <p>
+                    Registration:
+                    {{ vehicle.registration_number }}
+                </p>
+
+                <a href="/vehicle/{{ vehicle.id }}/qr">
+                    <button>
+                        View QR
+                    </button>
+                </a>
+
+            </div>
+
+            <hr>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>
+            You haven't added any vehicles yet.
+        </p>
+
+    {% endif %}
+
+
+    <a href="/vehicle/add">
+
+        <button>
+            + Add Vehicle
+        </button>
+
+    </a>
+
+</body>
+
+</html>
